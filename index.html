@@ -1,0 +1,824 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Юлия Ермохина — копирайтер-редактор для B2B и экспертных ниш</title>
+  <meta name="description" content="Копирайтер-редактор: лендинги, SEO-статьи, презентации, email-рассылки, посты и B2B-коммуникации для сложных продуктов и экспертных ниш.">
+  <meta property="og:title" content="Юлия Ермохина — копирайтер-редактор">
+  <meta property="og:description" content="Упаковываю сложные B2B-продукты и экспертизу в тексты, которые ведут к действию.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#111111">
+  <style>
+    :root{
+      --bg:#fbf7f2;
+      --paper:#ffffff;
+      --ink:#171313;
+      --muted:#6d6660;
+      --line:#e9ded4;
+      --rose:#d68aa7;
+      --rose-dark:#a94d72;
+      --blue:#2b79bd;
+      --blue-soft:#eaf4ff;
+      --rose-soft:#fff0f6;
+      --sand:#f2e3d4;
+      --green:#244b3e;
+      --shadow:0 24px 70px rgba(55,35,22,.12);
+      --radius:28px;
+      --radius-sm:18px;
+      --max:1180px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      background:
+        radial-gradient(circle at 8% 8%, rgba(214,138,167,.22), transparent 34%),
+        radial-gradient(circle at 95% 12%, rgba(43,121,189,.16), transparent 32%),
+        linear-gradient(180deg,#fffaf5 0%,var(--bg) 44%,#fff 100%);
+      color:var(--ink);
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      line-height:1.45;
+      overflow-x:hidden;
+    }
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .wrap{width:min(var(--max), calc(100% - 40px)); margin:0 auto}
+    .section{padding:92px 0}
+    .section--tight{padding:62px 0}
+
+    .header{
+      position:sticky;
+      top:0;
+      z-index:20;
+      backdrop-filter: blur(18px);
+      background:rgba(251,247,242,.82);
+      border-bottom:1px solid rgba(233,222,212,.72);
+    }
+    .nav{
+      height:76px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:24px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width:220px;
+    }
+    .brand__mark{
+      width:42px;
+      height:42px;
+      display:grid;
+      place-items:center;
+      border-radius:14px;
+      background:#111;
+      color:#fff;
+      font-weight:800;
+      letter-spacing:-.04em;
+      box-shadow:0 14px 30px rgba(17,17,17,.15);
+    }
+    .brand__text strong{display:block;font-size:15px;line-height:1.1}
+    .brand__text span{display:block;font-size:12px;color:var(--muted);margin-top:4px}
+    .nav__links{
+      display:flex;
+      justify-content:center;
+      gap:8px;
+      flex-wrap:wrap;
+      font-size:14px;
+      color:#4c4742;
+    }
+    .nav__links a{
+      padding:9px 12px;
+      border-radius:999px;
+      transition:.2s ease;
+    }
+    .nav__links a:hover{background:#fff;box-shadow:0 8px 28px rgba(38,22,11,.08)}
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      min-height:48px;
+      padding:14px 20px;
+      border-radius:999px;
+      border:1px solid transparent;
+      font-weight:750;
+      letter-spacing:-.02em;
+      transition:.22s ease;
+      cursor:pointer;
+      white-space:nowrap;
+    }
+    .btn--black{background:#111;color:#fff;box-shadow:0 18px 46px rgba(17,17,17,.22)}
+    .btn--black:hover{transform:translateY(-2px);box-shadow:0 24px 56px rgba(17,17,17,.28)}
+    .btn--light{background:#fff;border-color:var(--line);color:#171313}
+    .btn--light:hover{transform:translateY(-2px);box-shadow:0 16px 40px rgba(55,35,22,.10)}
+
+    .hero{
+      padding:88px 0 52px;
+      position:relative;
+    }
+    .hero__grid{
+      display:grid;
+      grid-template-columns: minmax(0,1.05fr) minmax(360px,.7fr);
+      gap:52px;
+      align-items:center;
+    }
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:9px;
+      padding:9px 13px;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:999px;
+      color:#5f5751;
+      font-size:14px;
+      box-shadow:0 10px 30px rgba(55,35,22,.06);
+    }
+    .dot{
+      width:9px;height:9px;border-radius:50%;background:var(--rose);
+      box-shadow:0 0 0 6px rgba(214,138,167,.18);
+    }
+    h1,h2,h3,p{margin:0}
+    h1{
+      margin-top:24px;
+      font-size:clamp(44px, 6.2vw, 84px);
+      line-height:.94;
+      letter-spacing:-.075em;
+      max-width:880px;
+    }
+    .lead{
+      margin-top:26px;
+      max-width:720px;
+      font-size:clamp(18px, 2vw, 22px);
+      line-height:1.48;
+      color:#46403a;
+    }
+    .hero__actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
+    .hero__meta{
+      margin-top:34px;
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0,1fr));
+      gap:12px;
+      max-width:760px;
+    }
+    .mini-stat{
+      padding:18px;
+      border-radius:20px;
+      background:rgba(255,255,255,.72);
+      border:1px solid var(--line);
+    }
+    .mini-stat strong{display:block;font-size:28px;letter-spacing:-.06em;line-height:1}
+    .mini-stat span{display:block;margin-top:8px;color:var(--muted);font-size:13px}
+
+    .hero-card{
+      position:relative;
+      min-height:560px;
+      border-radius:36px;
+      background:
+        linear-gradient(145deg, rgba(255,255,255,.94), rgba(255,255,255,.62)),
+        radial-gradient(circle at 28% 18%, rgba(214,138,167,.24), transparent 34%),
+        radial-gradient(circle at 72% 84%, rgba(43,121,189,.18), transparent 32%);
+      border:1px solid rgba(255,255,255,.86);
+      box-shadow:var(--shadow);
+      overflow:hidden;
+      padding:28px;
+    }
+    .hero-card::before{
+      content:"";
+      position:absolute;
+      inset:22px;
+      border-radius:30px;
+      border:1px solid rgba(17,17,17,.08);
+      pointer-events:none;
+    }
+    .notebook{
+      position:absolute;
+      left:30px;
+      right:30px;
+      top:42px;
+      border-radius:28px;
+      background:#fff;
+      box-shadow:0 25px 70px rgba(38,22,11,.14);
+      border:1px solid var(--line);
+      overflow:hidden;
+    }
+    .notebook__bar{
+      height:48px;
+      display:flex;
+      align-items:center;
+      gap:8px;
+      padding:0 18px;
+      background:#f8eee4;
+      border-bottom:1px solid var(--line);
+    }
+    .circle{width:10px;height:10px;border-radius:50%;background:var(--rose)}
+    .circle:nth-child(2){background:#edc6d7}.circle:nth-child(3){background:#8bb7de}
+    .notebook__body{padding:28px}
+    .line{
+      height:12px;
+      border-radius:999px;
+      background:#eee6de;
+      margin:14px 0;
+    }
+    .line.w1{width:86%}.line.w2{width:64%}.line.w3{width:72%}.line.w4{width:48%}
+    .note-title{
+      display:inline-block;
+      padding:8px 12px;
+      border-radius:12px;
+      background:var(--rose-soft);
+      color:var(--rose-dark);
+      font-weight:800;
+      font-size:13px;
+      margin-bottom:10px;
+    }
+    .floating{
+      position:absolute;
+      display:flex;
+      align-items:center;
+      gap:10px;
+      padding:14px 16px;
+      border-radius:18px;
+      background:#111;
+      color:#fff;
+      box-shadow:0 18px 44px rgba(17,17,17,.24);
+      font-size:14px;
+      font-weight:700;
+    }
+    .floating--one{left:26px;bottom:118px;transform:rotate(-2deg)}
+    .floating--two{right:26px;bottom:54px;background:#fff;color:#171313;border:1px solid var(--line);transform:rotate(2deg)}
+    .floating b{font-size:22px;line-height:1;color:var(--rose)}
+
+    .section-title{display:flex;align-items:end;justify-content:space-between;gap:30px;margin-bottom:34px}
+    h2{
+      font-size:clamp(34px, 4.2vw, 58px);
+      line-height:1;
+      letter-spacing:-.06em;
+      max-width:760px;
+    }
+    .section-title p{max-width:440px;color:var(--muted);font-size:17px}
+
+    .grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+    .grid-4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+    .card{
+      background:rgba(255,255,255,.78);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:26px;
+      box-shadow:0 16px 42px rgba(55,35,22,.07);
+      transition:.22s ease;
+      position:relative;
+      overflow:hidden;
+    }
+    .card:hover{transform:translateY(-4px);box-shadow:0 24px 60px rgba(55,35,22,.11)}
+    .icon{
+      width:48px;height:48px;border-radius:16px;
+      display:grid;place-items:center;
+      background:var(--blue-soft);
+      color:var(--blue);
+      font-weight:900;
+      font-size:22px;
+      margin-bottom:18px;
+    }
+    .card:nth-child(even) .icon{background:var(--rose-soft);color:var(--rose-dark)}
+    .card h3{font-size:22px;letter-spacing:-.04em;margin-bottom:10px}
+    .card p{color:var(--muted);font-size:15.5px}
+    .tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
+    .tag{font-size:12px;padding:7px 10px;border-radius:999px;background:#f5ece4;color:#5d5148;border:1px solid #eadbd0}
+
+    .split{
+      display:grid;
+      grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);
+      gap:26px;
+      align-items:stretch;
+    }
+    .panel{
+      border-radius:34px;
+      background:#111;
+      color:#fff;
+      padding:38px;
+      box-shadow:var(--shadow);
+      overflow:hidden;
+      position:relative;
+      min-height:480px;
+    }
+    .panel::after{
+      content:"";
+      position:absolute;
+      width:260px;height:260px;border-radius:50%;
+      right:-90px;bottom:-90px;
+      background:radial-gradient(circle, rgba(214,138,167,.7), transparent 68%);
+    }
+    .panel .eyebrow{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.16);color:#fff;box-shadow:none}
+    .panel h2{margin-top:22px;color:#fff}
+    .panel p{margin-top:22px;color:rgba(255,255,255,.74);font-size:18px;max-width:520px}
+    .proof-list{display:grid;gap:12px;margin-top:30px;position:relative;z-index:2}
+    .proof-item{display:flex;gap:12px;align-items:flex-start;padding:15px 16px;border:1px solid rgba(255,255,255,.13);background:rgba(255,255,255,.07);border-radius:18px}
+    .proof-item span{width:24px;height:24px;border-radius:50%;background:#fff;color:#111;display:grid;place-items:center;flex:0 0 auto;font-weight:900;font-size:13px}
+    .proof-item p{margin:0;color:#fff;font-size:15px}
+
+    .case-card{
+      padding:0;
+      overflow:hidden;
+      min-height:100%;
+      display:flex;
+      flex-direction:column;
+    }
+    .case-card__top{padding:24px 24px 18px;border-bottom:1px solid var(--line)}
+    .case-card__type{font-size:13px;color:var(--rose-dark);font-weight:850;text-transform:uppercase;letter-spacing:.08em}
+    .case-card h3{font-size:26px;margin-top:10px;margin-bottom:0}
+    .case-card__body{padding:22px 24px 24px;display:flex;flex-direction:column;gap:16px;flex:1}
+    .case-card ul{margin:0;padding:0;list-style:none;display:grid;gap:10px;color:var(--muted);font-size:15px}
+    .case-card li{position:relative;padding-left:22px}
+    .case-card li::before{content:"";position:absolute;left:0;top:.6em;width:8px;height:8px;border-radius:50%;background:var(--blue)}
+    .linkline{margin-top:auto;display:flex;gap:8px;flex-wrap:wrap}
+    .linkline a{display:inline-flex;padding:9px 11px;border:1px solid var(--line);border-radius:999px;font-weight:700;font-size:13px;background:#fff;color:#2c5f95}
+
+    .inline-accordion{
+      margin-top:2px;
+      border:1px solid var(--line);
+      border-radius:18px;
+      background:#fff;
+      overflow:hidden;
+    }
+    .inline-accordion summary{
+      list-style:none;
+      cursor:pointer;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      padding:12px 14px;
+      color:#2c5f95;
+      font-weight:800;
+      font-size:13px;
+    }
+    .inline-accordion summary::-webkit-details-marker{display:none}
+    .inline-accordion summary::after{
+      content:"+";
+      width:24px;
+      height:24px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      background:var(--blue-soft);
+      color:var(--blue);
+      font-weight:900;
+      flex:0 0 auto;
+      transition:.2s ease;
+    }
+    .inline-accordion[open] summary::after{transform:rotate(45deg);background:var(--rose-soft);color:var(--rose-dark)}
+    .inline-accordion__body{
+      border-top:1px solid var(--line);
+      padding:14px;
+      display:grid;
+      gap:12px;
+      color:#403a34;
+      font-size:14.5px;
+      line-height:1.55;
+    }
+    .inline-accordion__body p{margin:0;color:#403a34;font-size:14.5px}
+    .inline-accordion__body a{color:#2c5f95;font-weight:800;text-decoration:underline;text-underline-offset:3px}
+    .insert-note{
+      padding:12px;
+      border-radius:14px;
+      background:var(--rose-soft);
+      color:#7a3654;
+      font-weight:650;
+    }
+
+    .steps{counter-reset:step;display:grid;gap:14px}
+    .step{
+      counter-increment:step;
+      display:grid;
+      grid-template-columns:74px 1fr;
+      gap:18px;
+      align-items:start;
+      padding:24px;
+      border-radius:26px;
+      background:#fff;
+      border:1px solid var(--line);
+      box-shadow:0 14px 36px rgba(55,35,22,.06);
+    }
+    .step::before{
+      content:"0" counter(step);
+      width:54px;height:54px;border-radius:18px;
+      display:grid;place-items:center;
+      background:#111;color:#fff;font-weight:900;
+      letter-spacing:-.04em;
+    }
+    .step h3{font-size:22px;margin-bottom:8px}
+    .step p{color:var(--muted)}
+
+    .niche-row{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+    .niche{
+      min-height:156px;
+      border-radius:26px;
+      padding:20px;
+      background:#fff;
+      border:1px solid var(--line);
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      box-shadow:0 12px 32px rgba(55,35,22,.05);
+    }
+    .niche b{font-size:18px;letter-spacing:-.03em}
+    .niche span{font-size:13px;color:var(--muted);margin-top:10px;display:block}
+    .niche em{font-style:normal;font-size:32px;line-height:1}
+
+    .quote{
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      min-height:260px;
+      background:#fff;
+    }
+    .quote p{font-size:18px;color:#302b27;line-height:1.55}
+    .quote footer{margin-top:24px;color:var(--muted);font-size:14px}
+    .quote .mark{font-size:44px;line-height:1;color:var(--rose);margin-bottom:12px;font-weight:900}
+
+    .cta{
+      padding:72px 0 92px;
+    }
+    .cta-box{
+      border-radius:40px;
+      background:#111;
+      color:#fff;
+      padding:54px;
+      position:relative;
+      overflow:hidden;
+      box-shadow:0 34px 90px rgba(17,17,17,.24);
+    }
+    .cta-box::before{
+      content:"";
+      position:absolute;
+      width:340px;height:340px;border-radius:50%;
+      right:-70px;top:-110px;
+      background:radial-gradient(circle, rgba(43,121,189,.6), transparent 68%);
+    }
+    .cta-box::after{
+      content:"";
+      position:absolute;
+      width:260px;height:260px;border-radius:50%;
+      left:38%;bottom:-130px;
+      background:radial-gradient(circle, rgba(214,138,167,.55), transparent 68%);
+    }
+    .cta-box__content{position:relative;z-index:2;display:grid;grid-template-columns:1fr auto;gap:32px;align-items:end}
+    .cta-box h2{color:#fff;max-width:760px}
+    .cta-box p{margin-top:18px;color:rgba(255,255,255,.72);font-size:18px;max-width:620px}
+    .cta-box .btn--light{border-color:rgba(255,255,255,.18)}
+
+    .footer{
+      padding:28px 0 44px;
+      border-top:1px solid var(--line);
+      color:var(--muted);
+      font-size:14px;
+    }
+    .footer__grid{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    .footer a{color:#171313;font-weight:800}
+
+    .mobile-toggle{display:none}
+
+    @media (max-width: 980px){
+      .hero__grid,.split{grid-template-columns:1fr}
+      .hero-card{min-height:460px}
+      .grid-3,.grid-4{grid-template-columns:repeat(2,1fr)}
+      .niche-row{grid-template-columns:repeat(2,1fr)}
+      .section-title{display:block}
+      .section-title p{margin-top:16px}
+      .nav__links{display:none}
+      .brand{min-width:0}
+      .cta-box__content{grid-template-columns:1fr}
+    }
+    @media (max-width: 640px){
+      .wrap{width:min(100% - 24px, var(--max))}
+      .section{padding:68px 0}
+      .nav{height:68px}
+      .brand__text span{display:none}
+      .btn{width:100%}
+      .hero{padding:54px 0 34px}
+      h1{font-size:44px;line-height:.98}
+      .lead{font-size:17px}
+      .hero__actions{display:grid;grid-template-columns:1fr}
+      .hero__meta{grid-template-columns:1fr}
+      .hero-card{min-height:420px;border-radius:28px;padding:16px}
+      .notebook{left:16px;right:16px;top:24px}
+      .notebook__body{padding:22px}
+      .floating{font-size:12px;max-width:250px}
+      .floating--one{left:14px;bottom:108px}
+      .floating--two{right:14px;bottom:38px}
+      .grid-3,.grid-4,.niche-row{grid-template-columns:1fr}
+      .card,.panel,.cta-box{padding:24px;border-radius:26px}
+      .panel{min-height:auto}
+      .step{grid-template-columns:1fr;padding:20px}
+      .cta-box{padding:32px 24px}
+      .section-title{margin-bottom:22px}
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="wrap nav" aria-label="Основная навигация">
+      <a class="brand" href="#top" aria-label="В начало страницы">
+        <span class="brand__mark">ЮЕ</span>
+        <span class="brand__text"><strong>Юлия Ермохина</strong><span>копирайтер-редактор</span></span>
+      </a>
+      <nav class="nav__links">
+        <a href="#services">Что пишу</a>
+        <a href="#expertise">Экспертиза</a>
+        <a href="#cases">Кейсы</a>
+        <a href="#process">Процесс</a>
+        <a href="#contact">Контакты</a>
+      </nav>
+      <a class="btn btn--black" href="https://t.me/yuliya_u4" target="_blank" rel="noopener">Написать в Telegram</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero__grid">
+        <div>
+          <span class="eyebrow"><span class="dot"></span> B2B · digital-контент · экспертные ниши</span>
+          <h1>Тексты для сложных продуктов, которые легко читать и проще продавать</h1>
+          <p class="lead">Я копирайтер-редактор. Помогаю бизнесу упаковывать экспертизу, объяснять ценность продукта, закрывать возражения аудитории и доводить пользователя до действия.</p>
+          <div class="hero__actions">
+            <a class="btn btn--black" href="https://t.me/yuliya_u4" target="_blank" rel="noopener">Обсудить задачу</a>
+            <a class="btn btn--light" href="#cases">Смотреть примеры</a>
+          </div>
+          <div class="hero__meta" aria-label="Ключевые факты">
+            <div class="mini-stat"><strong>4 года</strong><span>в B2B, digital-контенте и экспертных нишах</span></div>
+            <div class="mini-stat"><strong>5 сфер</strong><span>маркетинг, HR, food, дизайн, SMM</span></div>
+            <div class="mini-stat"><strong>от идеи до CTA</strong><span>структура, смыслы, редактура и финальная логика</span></div>
+          </div>
+        </div>
+        <aside class="hero-card" aria-label="Визуальная карточка автора">
+          <div class="notebook" aria-hidden="true">
+            <div class="notebook__bar"><span class="circle"></span><span class="circle"></span><span class="circle"></span></div>
+            <div class="notebook__body">
+              <span class="note-title">черновик → понятный текст</span>
+              <div class="line w1"></div>
+              <div class="line w2"></div>
+              <div class="line w3"></div>
+              <br>
+              <span class="note-title" style="background:var(--blue-soft);color:var(--blue)">экспертность → выгода</span>
+              <div class="line w1"></div>
+              <div class="line w4"></div>
+              <div class="line w3"></div>
+            </div>
+          </div>
+          <div class="floating floating--one"><b>→</b> закрываю возражения ЦА</div>
+          <div class="floating floating--two"><b>✓</b> собираю структуру до CTA</div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="wrap">
+        <div class="section-title">
+          <h2>Что можно делегировать</h2>
+          <p>Беру текстовую часть там, где важно сохранить экспертность, но сделать материал понятным и коммерчески сильным.</p>
+        </div>
+        <div class="grid-3">
+          <article class="card">
+            <div class="icon">L</div>
+            <h3>Лендинги и сайты</h3>
+            <p>Структура страницы, первый экран, блоки выгод, логика пользовательского пути, CTA и тексты для форм.</p>
+            <div class="tags"><span class="tag">посадочные страницы</span><span class="tag">оффер</span><span class="tag">прототип</span></div>
+          </article>
+          <article class="card">
+            <div class="icon">S</div>
+            <h3>SEO-статьи</h3>
+            <p>Экспертные материалы для блога: с поисковой логикой, понятной структурой и пользой для читателя.</p>
+            <div class="tags"><span class="tag">B2B</span><span class="tag">гайды</span><span class="tag">экспертность</span></div>
+          </article>
+          <article class="card">
+            <div class="icon">E</div>
+            <h3>Email-рассылки</h3>
+            <p>Письма для прогрева, запусков, презентации продукта и повторного касания с аудиторией.</p>
+            <div class="tags"><span class="tag">воронки</span><span class="tag">прогрев</span><span class="tag">запуски</span></div>
+          </article>
+          <article class="card">
+            <div class="icon">P</div>
+            <h3>Презентации</h3>
+            <p>Текстовая логика слайдов: от структуры и заголовков до УТП, спикерских тезисов и смысловых блоков.</p>
+            <div class="tags"><span class="tag">B2B</span><span class="tag">ритейл</span><span class="tag">кейсы</span></div>
+          </article>
+          <article class="card">
+            <div class="icon">A</div>
+            <h3>Баннеры и директ</h3>
+            <p>Короткие формулировки для рекламных кампаний: заголовки, УТП, призывы и варианты A/B-гипотез.</p>
+            <div class="tags"><span class="tag">CTA</span><span class="tag">креативы</span><span class="tag">гипотезы</span></div>
+          </article>
+          <article class="card">
+            <div class="icon">T</div>
+            <h3>Посты и Telegram</h3>
+            <p>Экспертные посты, контент-планы, адаптация исследований и тексты от лица автора или бренда.</p>
+            <div class="tags"><span class="tag">личный бренд</span><span class="tag">SMM</span><span class="tag">тональность</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section--tight" id="expertise">
+      <div class="wrap">
+        <div class="niche-row" aria-label="Сферы опыта">
+          <div class="niche"><em>↗</em><div><b>Маркетинг</b><span>SEO-статьи, бизнес-гайды, посты</span></div></div>
+          <div class="niche"><em>☉</em><div><b>HR-сфера</b><span>кейсы, сайты, чат-боты, экспертные материалы</span></div></div>
+          <div class="niche"><em>◌</em><div><b>Пищевая промышленность</b><span>лендинги, презентации, рассылки, директ</span></div></div>
+          <div class="niche"><em>✦</em><div><b>Дизайн</b><span>гайды, журналы, упаковка смыслов</span></div></div>
+          <div class="niche"><em>≋</em><div><b>SMM</b><span>посты, сторис, сценарии, воронки</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap split">
+        <div class="panel">
+          <span class="eyebrow"><span class="dot"></span> Сильная сторона</span>
+          <h2>Сложные темы — без потери смысла</h2>
+          <p>Работаю с материалами, где недостаточно «красиво написать». Нужно разобраться в продукте, собрать вводные, понять аудиторию и перевести экспертность в ясный коммерческий текст.</p>
+          <div class="proof-list">
+            <div class="proof-item"><span>1</span><p>Интервьюирую экспертов и уточняю вводные до понятной структуры.</p></div>
+            <div class="proof-item"><span>2</span><p>Перевожу свойства продукта в выгоды для бизнеса и пользователя.</p></div>
+            <div class="proof-item"><span>3</span><p>Держу баланс между пользой, логикой и коммерческой целью.</p></div>
+          </div>
+        </div>
+        <div class="grid-2" style="display:grid;gap:18px">
+          <article class="card">
+            <div class="icon">01</div>
+            <h3>Бизнес-задача впереди текста</h3>
+            <p>Сначала фиксирую, что должен сделать материал: привлечь, прогреть, объяснить, повысить доверие или довести до заявки.</p>
+          </article>
+          <article class="card">
+            <div class="icon">02</div>
+            <h3>Язык аудитории</h3>
+            <p>Текст остается экспертным, но не превращается в перегруженную внутреннюю документацию.</p>
+          </article>
+          <article class="card">
+            <div class="icon">03</div>
+            <h3>Структура и путь</h3>
+            <p>Выстраиваю логику так, чтобы читатель быстро понял ценность, увидел аргументы и дошел до следующего шага.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="cases">
+      <div class="wrap">
+        <div class="section-title">
+          <h2>Примеры проектов</h2>
+          <p>Ниже — направления, с которыми уже работала. Часть материалов можно показать по запросу или обсудить в Telegram.</p>
+        </div>
+        <div class="grid-4">
+          <article class="card case-card">
+            <div class="case-card__top">
+              <span class="case-card__type">food / B2B</span>
+              <h3>Пищевая промышленность</h3>
+            </div>
+            <div class="case-card__body">
+              <ul>
+                <li>Лендинги для ингредиентов и технологических решений.</li>
+                <li>Презентации, рассылки, УТП для баннеров и Яндекс.Директ.</li>
+                <li>Работа с технологами, R&D и внутренними экспертами.</li>
+              </ul>
+              <div class="linkline">
+                <a href="https://improvers-denfai.ssnab.ru/" target="_blank" rel="noopener">лендинг 1</a>
+                <a href="https://fortified-foods.ssnab.ru/" target="_blank" rel="noopener">лендинг 2</a>
+              </div>
+            </div>
+          </article>
+          <article class="card case-card">
+            <div class="case-card__top">
+              <span class="case-card__type">HR</span>
+              <h3>HR и обучение</h3>
+            </div>
+            <div class="case-card__body">
+              <ul>
+                <li>SEO-статьи для платформ корпоративного обучения.</li>
+                <li>Кейсы по автоматизации HR-процессов.</li>
+                <li>Сайт и чат-бот для продукта в HR-нише.</li>
+              </ul>
+              <div class="linkline">
+                <a href="http://bizinnova.ru/" target="_blank" rel="noopener">сайт</a>
+                <a href="https://t.me/Bizinnova_bot" target="_blank" rel="noopener">чат-бот</a>
+              </div>
+            </div>
+          </article>
+          <article class="card case-card">
+            <div class="case-card__top">
+              <span class="case-card__type">marketing</span>
+              <h3>Маркетинг</h3>
+            </div>
+            <div class="case-card__body">
+              <ul>
+                <li>SEO-статьи для блога облачной платформы.</li>
+                <li>Бизнес-гайды и тексты для B2B/B2C-продаж.</li>
+                <li>Экспертные посты для Telegram-каналов предпринимателей.</li>
+              </ul>
+              <div class="linkline">
+                <a href="https://sellty.ru/tpost/fldn1bllp1-analitika-v-b2b-kak-avtomatizirovat-sbor" target="_blank" rel="noopener" title="Аналитика в B2B. Как автоматизировать сбор данных без больших вложений?">Аналитика в B2B</a>
+                <a href="https://sellty.ru/tpost/aido5ok1k1-sozdanie-internet-magazina-v-2024-godu-p" target="_blank" rel="noopener" title="Создание интернет-магазина в 2025 году. Пошаговое руководство, важные советы и обзор топ-5 лучших платформ">Интернет-магазин в 2025</a>
+              </div>
+            </div>
+          </article>
+          <article class="card case-card">
+            <div class="case-card__top">
+              <span class="case-card__type">agency / SMM</span>
+              <h3>Агентские проекты</h3>
+            </div>
+            <div class="case-card__body">
+              <ul>
+                <li>Тексты для презентаций, гайдов, журналов и онлайн-курсов.</li>
+                <li>Контент-планы, воронки, сторис и сценарии рилсов.</li>
+                <li>Адаптация интонации под личный бренд автора.</li>
+              </ul>
+              <div class="linkline">
+                <a href="https://vk.com/ostroumova_pm" target="_blank" rel="noopener">пример VK</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="process">
+      <div class="wrap split">
+        <div>
+          <div class="section-title" style="display:block;margin-bottom:24px">
+            <h2>Как строится работа</h2>
+            <p>Процесс прозрачный: сначала собираем смыслы, затем превращаем их в структуру, после — в готовый текст.</p>
+          </div>
+          <a class="btn btn--black" href="https://t.me/yuliya_u4" target="_blank" rel="noopener">Написать и обсудить сроки</a>
+        </div>
+        <div class="steps">
+          <article class="step"><div><h3>Задача и аудитория</h3><p>Разбираем цель текста, продукт, сегмент, ожидания читателя и следующий шаг.</p></div></article>
+          <article class="step"><div><h3>Вводные и интервью</h3><p>Собираю материалы, задаю вопросы экспертам, уточняю факты и ограничения.</p></div></article>
+          <article class="step"><div><h3>Структура</h3><p>Собираю логику страницы, статьи, презентации или письма до написания финального текста.</p></div></article>
+          <article class="step"><div><h3>Текст и редактура</h3><p>Готовлю материал, дорабатываю после комментариев и довожу до чистой версии.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section--tight" id="reviews">
+      <div class="wrap">
+        <div class="section-title">
+          <h2>Что отмечают в работе</h2>
+          <p>Отзывы из рабочих переписок: про структуру, понятность текста и аккуратную доработку после правок.</p>
+        </div>
+        <div class="grid-3">
+          <article class="card quote">
+            <div><div class="mark">“</div><p>Потрясающие посты, очень нравится, очень структурно, всё понятно.</p></div>
+            <footer>Отзыв о серии экспертных постов</footer>
+          </article>
+          <article class="card quote">
+            <div><div class="mark">“</div><p>Всё отлично, оставила минимальные правки. Очень комфортно работать — результаты получаются отличными.</p></div>
+            <footer>Отзыв о текстах и редактуре</footer>
+          </article>
+          <article class="card quote">
+            <div><div class="mark">“</div><p>Вижу письма: как всегда огонь. В течение часа добавлю комментарии.</p></div>
+            <footer>Отзыв о письмах для прогрева</footer>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="contact">
+      <div class="wrap">
+        <div class="cta-box">
+          <div class="cta-box__content">
+            <div>
+              <h2>Нужен текст для B2B-продукта, лендинга или экспертного материала?</h2>
+              <p>Напишите в Telegram: коротко расскажите о задаче, формате и сроках. Я помогу собрать структуру и понять, какой текст нужен в первую очередь.</p>
+            </div>
+            <a class="btn btn--light" href="https://t.me/yuliya_u4" target="_blank" rel="noopener">@yuliya_u4</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__grid">
+      <div>© <span id="year"></span> Юлия Ермохина · копирайтер-редактор</div>
+      <div><a href="https://t.me/yuliya_u4" target="_blank" rel="noopener">Telegram для связи</a></div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const links = document.querySelectorAll('a[href^="#"]');
+    links.forEach(link => {
+      link.addEventListener('click', event => {
+        const target = document.querySelector(link.getAttribute('href'));
+        if (!target) return;
+        event.preventDefault();
+        target.scrollIntoView({behavior:'smooth', block:'start'});
+      });
+    });
+  </script>
+</body>
+</html>
